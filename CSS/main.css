@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+/* Normalize CSS*/
+*{
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+:root{
+  --img-bg-desktop: url(/images/bg-desktop-light.jpg);
+  --img-bg-mobile: url(/images/bg-mobile-light.jpg);
+  --icon: url(/images/icon-moon.svg);
+
+  --color-bg-main: hsl(0, 0%, 97%);
+  --color-bg-list: hsl(0, 0%, 98%);
+  --color-letter-filter: hsl(234, 11%, 52%);
+  --hover-elements: hsl(232, 15%, 38%);
+
+  --icon-checked: url(/images/icon-check.svg) center no-repeat, linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+  --hover-color-letter-filter: hsl(220, 98%, 61%);
+
+  --shadow: hsl(0, 23%, 90%);
+}
+
+[data-theme="dark"]{
+  --img-bg-desktop: url(/images/bg-desktop-dark.jpg);
+  --img-bg-mobile: url(/images/bg-mobile-dark.jpg);
+  --icon: url(/images/icon-sun.svg);
+
+  --color-bg-main: hsl(235, 21%, 11%);
+  --color-bg-list: hsl(235, 24%, 19%);
+  --color-letters:hsl(234, 39%, 85%);
+  --hover-elements: hsl(236, 33%, 92%);
+  
+  --complete-elements: hsl(234, 11%, 52%);
+
+  --shadow: hsl(234, 34%, 12%);
+  
+}
+
+body{
+  font-size: 18px;
+  font-family: 'Josefin Sans', sans-serif;
+  background: var(--color-bg-main);
+  position: relative;
+}
+
+.dynamic-background{
+  position: absolute;
+  z-index: -1;
+  width: 100vw; height: 200px;
+  background: var(--img-bg-mobile) center center/cover no-repeat;
+}
+
+main{
+  width: 90%;
+  margin: 0 auto;
+}
+
+.d-flex{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1{
+  font: bold 2rem;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.dynamic-icon{
+  height: 100%;
+  display: block;
+  position: relative;
+  cursor: pointer;
+}
+
+.dynamic-icon::after{
+  content: var(--icon);
+}
+
+section, header{
+  padding-top: 5vh;
+}
+
+.input-field{
+  height: 2.5em;
+  margin-bottom: 1em;
+  background: var(--color-bg-list);
+  padding: 0 .5em;
+  border-radius: 5px;
+}
+
+input[type="text"]{
+  width: 95%; height: 100%;
+  margin-left: .4em;
+  font-size: 1.2rem;
+  color: var(--color-letter-filter);
+  background: none;
+  border: none;
+  position: relative;
+}
+
+.checkbox-icon{
+  width: 24px; height: 24px;
+  border: 1px solid var(--color-letter-filter);
+  border-radius: 35px;
+  cursor: pointer;
+  display: block;
+}
+
+.icon-checked{
+  background: var(--icon-checked);
+}
+
+.todo-list li{
+  height: 2.5em;
+  padding: 0 .5em;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--color-letter-filter);
+  background: var(--color-bg-list);
+  border-bottom:  1px solid var(--color-letter-filter);
+}
+
+.todo-list li:first-child{
+  border-radius: 5px 5px 0 0;
+}
+
+.todo-list p{
+  display: inline-block;
+  margin-left: .5em;
+  width: 90%;
+}
+
+li:hover .icon-cross{
+  opacity: 1;
+}
+
+.icon-cross{
+  opacity: 0;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.list-footer{
+  color: var(--color-letter-filter);
+  background: var(--color-bg-list);
+  height: 2.5em;
+  padding: 0 .5em;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 5px 5px var(--shadow);
+}
+
+.filters{
+  width: 100%; height: 2.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  top: 4em;
+  left: 0; 
+  position: absolute;
+  background: var(--color-bg-list);
+}
+
+a{
+  color: var(--color-letter-filter);
+}
+
+a:hover{
+  color: var(--hover-elements);
+}
+
+a:focus{
+  cursor: pointer;
+  color: var(--hover-color-letter-filter);
+}
+
+.filters ul{
+  display: flex;
+}
+
+.filters ul li{
+  margin-left: 1em;
+}
+
+.counter-box{
+  width: 100%;
+}
+
+.counter-box span, .counter-box p{
+  display: inline-block;
+}
+
+.counter-box p:last-child{
+  cursor: pointer;
+}
+
+.complet {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.complet .checkbox .checkbox-icon{
+  border: none;
+  background: var(--icon-checked);
+}
+
+@media (min-width: 1244px){
+  main{
+    width: 40%; 
+  }
+}
+
+@media (min-width: 745px){
+  .filters{
+    width: 0; height: 0;
+    top: .1em;
+    position: relative;
+  }
+
+  .dynamic-background{
+    background: var(--img-bg-desktop) center center/cover no-repeat;
+  }
+}
+

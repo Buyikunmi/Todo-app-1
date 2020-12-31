@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <script src="https://kit.fontawesome.com/21afb34ac8.js" crossorigin="anonymous"></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="CSS/main.css">
+  <title>Frontend Mentor | Todo app</title>
+
+</head>
+<body>
+<div class="dynamic-background"></div>
+
+<main>
+  <header class="d-flex">
+    <h1>todo</h1>
+    <div class="dynamic-icon"></div>
+  </header>
+
+  <section>
+    <div class="input-field d-flex">
+      <div class="checkbox">
+        <span class="checkbox-icon"></span>
+      </div>
+      <input id="input-field" type="text" name="add new item" placeholder="Create a new todo..."> 
+    </div>
+
+    <div class="todo-list">
+      <ul id="list"></ul>
+    </div>
+  </section>
+  
+  <div class="list-footer d-flex">
+    <div class="counter-box d-flex">
+      <p><span class="counter">0</span> items left</p>
+      <div class="filters">
+        <ul>
+          <li><a href="#" id="all">All</a></li>
+          <li><a href="#" id="active">Active</a></li>
+          <li><a href="#" id="completed">Completed</a></li>
+        </ul>
+      </div>
+      <p id="clear_completed"><a href="#">Clear Completed</a></p>
+    </div>
+  </div>
+</main>
+
+</body>
+<script src="JS/DarkMode.js"></script>
+<script src="JS/App.js"></script>
+</html>
